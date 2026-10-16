@@ -4,7 +4,7 @@ A two-page jQuery storefront: a catalog page that loads products from an API and
 
 ## Context
 
-I committed this in September 2020 (commit message "Competency Report"), early in learning web development. It is a later version of the code in [online-store](https://github.com/mesaye85/online-store), with search and category filter buttons added.
+I committed this in September 2020 (commit message "Competency Report"), early in learning web development. It is a later version of code I first uploaded in August 2020 to a separate online-store repository, with search and category filter buttons added. I removed that copy in 2026; its one later fix, the stylesheet link in `index.html`, is applied here.
 
 ## Stack
 
@@ -22,7 +22,7 @@ Archived. Not maintained.
 
 ## Known gaps
 
-- `index.html` line 9 has `rel="stylysheet"`, so `css/catalog.css` never loads.
+- `index.html` line 9 had `rel="stylysheet"`, so `css/catalog.css` never loaded. That's fixed now; the CSS is unchanged.
 - The search input is `id="txt-seatch"` (`index.html` line 30) but `js/catalog.js` line 123 reads `#txt-search`, so search throws. The loop in `search()` (lines 112-116) has no braces and only checks the last item.
 - `js/admin.js` declares `init` and `clearForm` inside `register()` (lines 60-71), so `window.onload = init` (line 108) fails and the Register button is never wired up. Even if it were, the POST sends `item` before it is created (line 34 vs line 53).
 - Field name mismatch: the admin form saves `image` (`js/admin.js` line 18) and the catalog reads `item.img` (`js/catalog.js` line 79).
